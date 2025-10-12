@@ -9,7 +9,6 @@ import {
   where,
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getDatabase } from "firebase/database";
 
 // Firebase config (from .env.local in Next.js)
 const firebaseConfig = {
@@ -20,7 +19,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
-  databaseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
 };
 
 // Singleton pattern to prevent re-initialization in dev
@@ -29,7 +27,6 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 // Modular exports
 export const firestoreDB = getFirestore(app);
 export const storage = getStorage(app);
-export const database = getDatabase(app);
 
 export async function getAllReviews(): Promise<Review[]> {
   const reviewsRef = collection(firestoreDB, "reviews");

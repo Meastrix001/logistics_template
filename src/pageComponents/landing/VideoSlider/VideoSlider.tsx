@@ -10,7 +10,7 @@ interface MediaSource {
 }
 
 const getResolutionKey = () => {
-    const width = window.innerWidth;
+    const width = window?.innerWidth;
     if (width < 768) return "hd";
     if (width < 1920) return "qhd";
     return "uqhd";
@@ -39,13 +39,15 @@ export const VideoSlider = () => {
 
     // update resolution dynamically
     useEffect(() => {
-        const updateRes = () => {
-            const newKey = getResolutionKey();
-            setResKey((prev) => (prev !== newKey ? newKey : prev));
-        };
-        updateRes();
-        window.addEventListener("resize", updateRes);
-        return () => window.removeEventListener("resize", updateRes);
+        if (window) {
+            const updateRes = () => {
+                const newKey = getResolutionKey();
+                setResKey((prev) => (prev !== newKey ? newKey : prev));
+            };
+            updateRes();
+            window.addEventListener("resize", updateRes);
+            return () => window.removeEventListener("resize", updateRes);
+        }
     }, []);
 
     // function to play a specific video
