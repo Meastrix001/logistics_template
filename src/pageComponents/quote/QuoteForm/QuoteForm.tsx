@@ -27,6 +27,7 @@ export const QuoteForm = () => {
 
     const checkFields = () => {
         const missingFields = requiredQuoteFormFields.filter(
+            // @ts-expect-error expected
             (key) => !formData[key] || formData[key].toString().trim() === "" || formData[key] === false
         );
 
