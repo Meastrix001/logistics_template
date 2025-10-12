@@ -1,4 +1,4 @@
-import About from "@/pages/about/page";
+import About from "@/pageComponents/about/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";

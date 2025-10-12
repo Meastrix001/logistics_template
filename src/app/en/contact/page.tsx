@@ -1,4 +1,4 @@
-import Contact from "@/pages/contact/page";
+import Contact from "@/pageComponents/contact/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";

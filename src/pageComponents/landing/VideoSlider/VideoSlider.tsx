@@ -5,6 +5,7 @@ import { Box } from "@radix-ui/themes";
 interface MediaSource {
     hd: string;
     qhd: string;
+    uqhd: string
     videoLength: number;
 }
 
@@ -104,6 +105,7 @@ export const VideoSlider = () => {
             {mediaItems.map((item, i) => (
                 <video
                     key={i}
+                    // @ts-expect-error expected
                     ref={(el) => (videoRefs.current[i] = el)}
                     className={`slider-video ${i === current ? "active" : ""}`}
                     src={item[resKey]}

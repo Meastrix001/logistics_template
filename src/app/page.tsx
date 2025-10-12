@@ -1,4 +1,4 @@
-import Home from "@/pages/landing/page";
+import Home from "@/pageComponents/landing/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";
@@ -9,7 +9,7 @@ const pageLanguage = "et"
 
 export default function LandingPageEst() {
   return (
-    <Home lang={pageLanguage} />
+    <Home />
   )
 }
 

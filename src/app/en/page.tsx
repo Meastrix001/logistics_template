@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { brand } from "@/theme/brand.config";
-import Home from "@/pages/landing/page";
+import Home from "@/pageComponents/landing/page";
 
 const pageLanguage = "en"
 
 
 export default function LandingPageEn() {
-    return <Home lang={pageLanguage} />
+    return <Home />
 }
 
 

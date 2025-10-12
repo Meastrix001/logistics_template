@@ -68,7 +68,8 @@ export default function LanguageSwitcher() {
           size="3"
           variant={"solid"}
           color={language === langObj.val ? "green" : "gold"}
-          onClick={() => handleLanguageChange(langObj.val)}
+
+          onClick={() => handleLanguageChange(langObj.val as "et")}
         >
           {langObj.key}
         </Button>

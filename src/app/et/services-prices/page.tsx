@@ -1,4 +1,4 @@
-import Prices from "@/pages/services-prices/page";
+import Prices from "@/pageComponents/services-prices/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";

@@ -1,4 +1,4 @@
-import FaqPage from "@/pages/faq/faq.page";
+import FaqPage from "@/pageComponents/faq/faq.page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";

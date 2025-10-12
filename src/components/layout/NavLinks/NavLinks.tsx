@@ -39,7 +39,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
               style={{
                 color: "black",
                 borderBottom:
-                  pathname.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "") ===
+                  pathname?.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "") ===
                     route.path.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "")
                     ? "2px solid var(--accent-a9)"
                     : "",

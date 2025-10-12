@@ -1,4 +1,4 @@
-import ReviewPage from "@/pages/review/page";
+import ReviewPage from "@/pageComponents/review/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";
