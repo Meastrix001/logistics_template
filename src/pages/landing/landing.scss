@@ -1,0 +1,40 @@
+@use "VideoSlider/videoSlider";
+
+.home-page {
+  --anim-length: 0.75s;
+
+  .hero-cta {
+    a {
+      &:nth-child(1) {
+        opacity: 0;
+        animation: fadeInBelow var(--anim-length) ease forwards;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        animation: fadeInBelow var(--anim-length) ease forwards;
+        animation-delay: var(--anim-length);
+      }
+      &:nth-child(3) {
+        opacity: 0;
+        animation: fadeInBelow var(--anim-length) ease forwards;
+        animation-delay: calc(var(--anim-length) * 2);
+      }
+    }
+  }
+
+  &__career {
+    position: relative;
+    z-index: 0; // establishes a stacking context safely
+
+    .bg {
+      background-image: url("/static/landing/office_bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      inset: 0; // shorthand for top/right/bottom/left = 0
+      z-index: -1;
+      filter: blur(4px);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+:root {
+  --var-gray-bg: rgb(68, 68, 68);
+}
+
+.button,
+.cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fadeIn {
+  animation: fadeInBelow 5s ease forwards;
+}
+
+.shadow-top {
+  &-right {
+    -webkit-box-shadow: 1rem -1rem 0px 0px var(--accent-9);
+    box-shadow: 1rem -1rem 0px 0px var(--accent-9);
+
+    @media (min-width: 1200) {
+      -webkit-box-shadow: 1.5rem -1.5rem 0px 0px var(--accent-9);
+      box-shadow: 1.5rem -1.5rem 0px 0px var(--accent-9);
+    }
+  }
+
+  &-left {
+    -webkit-box-shadow: 1rem -1rem 0px 0px var(--accent-9);
+    box-shadow: -1rem -1rem 0px 0px var(--accent-9);
+
+    @media (min-width: 1200) {
+      -webkit-box-shadow: 1.5rem -1.5rem 0px 0px var(--accent-9);
+      box-shadow: -1.5rem -1.5rem 0px 0px var(--accent-9);
+    }
+  }
+}
+
+.txt-invert {
+  color: white;
+}
+
+.txt-primary {
+  color: black;
+}
+
+.txt-italic {
+  font-style: italic;
+}
+
+// To handle the fade-in animations
+html,
+body {
+  overflow-x: hidden;
+}

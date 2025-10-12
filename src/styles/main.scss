@@ -1,0 +1,12 @@
+// Global styles
+@use "base/breakpoints";
+@use "base/reset";
+@use "base/global";
+@use "base/animations";
+
+// Components
+@use "../components/index.scss";
+
+// Pages
+@use "../app/pages" as appPages;
+@use "../pages/pages" as pageComponents;
