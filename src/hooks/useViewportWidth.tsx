@@ -4,16 +4,17 @@ const useViewportWidth = (number: number) => {
   const [isBreakpoint, setIsBreakpoint] = useState(false);
 
   useEffect(() => {
-    if (window) {
-      const handleResize = () => {
-        setIsBreakpoint(window.innerWidth < number);
-      };
+    if (typeof window === "undefined") return;
 
-      handleResize();
+    const handleResize = () => {
+      setIsBreakpoint(window.innerWidth < number);
+    };
 
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+
 
   });
 

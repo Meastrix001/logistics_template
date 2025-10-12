@@ -10,11 +10,13 @@ interface MediaSource {
 }
 
 const getResolutionKey = () => {
-    const width = window?.innerWidth;
+    if (typeof window === "undefined") return "hd";
+    const width = window.innerWidth;
     if (width < 768) return "hd";
     if (width < 1920) return "qhd";
     return "uqhd";
 };
+
 
 const mediaItems: MediaSource[] = [
     {
@@ -33,20 +35,17 @@ const mediaItems: MediaSource[] = [
 
 export const VideoSlider = () => {
     const [current, setCurrent] = useState(0);
-    const [resKey, setResKey] = useState<"hd" | "qhd" | "uqhd">(getResolutionKey());
+    const [resKey, setResKey] = useState<"hd" | "qhd" | "uqhd">("hd");
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-    // update resolution dynamically
     useEffect(() => {
-        if (window) {
-            const updateRes = () => {
-                const newKey = getResolutionKey();
-                setResKey((prev) => (prev !== newKey ? newKey : prev));
-            };
-            updateRes();
-            window.addEventListener("resize", updateRes);
-            return () => window.removeEventListener("resize", updateRes);
+        setResKey(getResolutionKey());
+
+        const handleResize = () => setResKey(getResolutionKey());
+        if (typeof window !== "undefined") {
+            window.addEventListener("resize", handleResize);
+            return () => window.removeEventListener("resize", handleResize);
         }
     }, []);
 

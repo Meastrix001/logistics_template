@@ -22,6 +22,8 @@ export default function LanguageSwitcher() {
   ]
 
   const handleLanguageChange = async (lang: 'en' | 'et') => {
+    if (typeof window === "undefined") return;
+
     let currentPath = window.location.pathname;
     setLanguage(lang)
     if (lang === "et" && window.location.pathname === "/") {
