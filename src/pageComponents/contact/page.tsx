@@ -1,62 +1,54 @@
-
+import { PageHeader } from "@/components/header/PageHeader";
 import {
   Box,
-  Flex,
-  Separator,
+  Card,
   Container,
+  Flex,
+  Grid,
+  Separator,
+  Text,
 } from "@radix-ui/themes";
-import { ContactMap } from "./Contact.map";
-import { BookingButton } from "@/components/ui/BookingBtn/bookingBtn";
-import { ContactList } from "./contact.list";
-import { ContactHero } from "./contact.hero";
-import { brand } from "@/theme/brand.config";
-import { PageLang } from "@/models/pageLang.model";
+import { ContactForm } from "./ContactForm/ContactForm";
+import { ContactMap } from "./ContactMap/ContactMap";
+import { ContactSocials } from "./ContactSocials/ContactSocials";
+import { InViewWrapper } from "@/hooks/InViewWrapper";
 
-export default function Contact({ lang }: PageLang) {
+
+export default function ContactPage() {
+
 
   return (
-    <Box className="contact">
-      <Container>
-        <Flex
-          direction="column"
-          align="center"
-          gap="6"
-          className="contact__container"
-        >
-          {/* Hero */}
-          <Box className="contact__hero" mb="6">
-            <ContactHero />
-          </Box>
+    <Container py={"9"} className="nav-correct" px={{ initial: "4", lg: "0" }}>
+      <InViewWrapper direction="top">
+        <Flex gap={"4"} direction={"column"} mb={"6"}>
+          <PageHeader text="Contact us" size="l" />
+          <Text>Reach us through any of the options below, we are happy to assist you with any questions.</Text>
+        </Flex>
+      </InViewWrapper>
 
-          <Separator style={{ background: brand.company.colorSecondary, height: "2px" }} size="4" />
+      <Card>
+        <Grid gap={{ initial: "4", lg: "7" }} p={{ initial: "1", md: "5" }}>
 
-          <Flex
-            className="contact__content"
-            direction={{ initial: "column", md: "row" }}
-            align="stretch"
-            justify="center"
-            gap="6"
-            mt="6"
-            mb="9"
-          >
-            <Box className="contact__info">
-              <Flex align="center" justify="center" height="100%">
-                <ContactList lang={lang} />
-              </Flex>
-            </Box>
+          <Grid columns={{ initial: "1", md: "6fr 0fr 6fr" }} gap={{ initial: "4", md: "9" }}>
+            <InViewWrapper direction="left" delay={0.15}>
+              <ContactForm />
+            </InViewWrapper>
 
-            {/* Map */}
-            <Box className="contact__map">
-              <ContactMap />
-            </Box>
+            <Separator orientation="vertical" size="4" color="green" style={{ width: "4px" }} />
+            <InViewWrapper direction="right" delay={0.15}>
+              <ContactSocials />
+            </InViewWrapper>
+          </Grid>
+
+          <Flex align={"center"} justify={"center"}>
+            <Separator size={"4"} color="green" style={{ height: "4px" }} />
           </Flex>
 
-          {/* Booking CTA */}
-          <Box mb="9">
-            <BookingButton lang={lang} />
+          <Box px={{ initial: "4", lg: "4" }} py={"3"}>
+            <ContactMap />
           </Box>
-        </Flex>
-      </Container>
-    </Box>
+        </Grid>
+      </Card>
+    </Container>
   );
 }

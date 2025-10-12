@@ -7,7 +7,7 @@ const pageLanguage = "et"
 
 
 export default function ContactPageEst() {
-    return <Contact lang={pageLanguage} />
+    return <Contact />
 }
 
 export const metadata: Metadata = {

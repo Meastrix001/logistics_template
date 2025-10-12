@@ -1,4 +1,4 @@
-import { Box, Theme, Flex, Section, Container } from "@radix-ui/themes";
+import { Box, Flex, Section, Container } from "@radix-ui/themes";
 import { LandingCTA } from "./LandingCTA/LandingCTA";
 import { VideoSlider } from "./VideoSlider/VideoSlider";
 import { LandingSummary } from "./LandingSummary/LandingSummary";
@@ -10,7 +10,7 @@ import { LandingMap } from "./LandingMap/LandingMap";
 
 export default function HomePage() {
   return (
-    <Theme accentColor="green" grayColor="slate" appearance="light">
+    <Box>
       <VideoSlider />
       <Container px={"6"}>
 
@@ -68,6 +68,6 @@ export default function HomePage() {
         </Section>
       </Container>
 
-    </Theme>
+    </Box>
   );
 }

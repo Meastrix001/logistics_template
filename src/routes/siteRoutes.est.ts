@@ -18,8 +18,8 @@ export const pageRoutes = (lang: "en" | "et") => {
       path: `/${lang}/terms`,
       label: "nav.keys.terms",
     } as Route,
-    offer: {
-      path: `/${lang}/offer`,
+    quote: {
+      path: `/${lang}/quote`,
       label: "",
     } as Route,
     // Nav
@@ -40,8 +40,8 @@ export const pageRoutes = (lang: "en" | "et") => {
         path: `/${lang}/terms`,
         label: "nav.keys.terms",
       } as Route,
-      offer: {
-        path: `/${lang}/offer`,
+      quote: {
+        path: `/${lang}/quote`,
         label: "nav.keys.offer",
       } as Route,
     },
