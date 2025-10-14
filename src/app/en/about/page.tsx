@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 const pageLanguage = "en"
 export default function AboutPageEn() {
-    return <About lang={pageLanguage} />
+    return <About />
 }
 
 export const metadata: Metadata = {

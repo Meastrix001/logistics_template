@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { DropdownMenu, Flex, HoverCard, Text } from "@radix-ui/themes";
-import { Route } from "@/models/Routes";
+import { Box, Text } from "@radix-ui/themes";
 import { NavLinksProps } from "./NavLinks.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,10 +24,8 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
 
 
   return (
-    <>
-      {Object.values(activeSiteRoutes.nav).map((route: Route & {
-        subLinks: Route[]
-      }, index) => {
+    <Box>
+      {Object.values(activeSiteRoutes.nav).map((route, index) => {
 
         if (route.subLinks) {
           return <NavLinksSubItem key="" route={route} index={index} onClick={onClick} />
@@ -60,7 +57,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
           </Text>
         </Link>
       })}
-    </>
+    </Box>
   );
 };
 

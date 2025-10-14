@@ -1,8 +1,9 @@
 "use client"
+import { ContactItem, ContactKeyValue } from "@/constants/contactData"
 import { InViewWrapper } from "@/hooks/InViewWrapper"
 import { Card, Grid, Box, Flex, AspectRatio, Text } from "@radix-ui/themes"
 
-export const TeamItem = ({ keyData, idx }) => {
+export const TeamItem = ({ keyData, idx }: { keyData: ContactItem[], idx: number }) => {
     return <>
         {keyData.map((data, i) => {
             return <InViewWrapper key={data.name} direction="top" delay={(0.1 * idx) + (i / 10)}>
@@ -18,8 +19,8 @@ export const TeamItem = ({ keyData, idx }) => {
                             </Box>
 
                             <Flex direction={"column"}>
-                                {data.contacts.map((contact) => {
-                                    return <Text key={contact.Value}>{contact.key}: <Text weight={"bold"} className="txt-primary">{contact.Value}</Text></Text>
+                                {data.contacts.map((contact: ContactKeyValue) => {
+                                    return <Text key={contact.value}>{contact.key}: <Text weight={"bold"} className="txt-primary">{contact.value}</Text></Text>
                                 })}
                             </Flex>
                         </Flex>

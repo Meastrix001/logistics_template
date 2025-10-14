@@ -11,6 +11,10 @@ export const NavLinksSubItem = ({ route, index, onClick }: { route: Route, index
     const pathname = usePathname();
     const language = useLanguageStore((s) => s.language)
 
+    if (!route.subLinks || route.subLinks.length === 0) {
+        return
+    }
+
     return <HoverCard.Root key={""}>
         <HoverCard.Trigger>
             <Flex align={"center"} gap={"2"}>

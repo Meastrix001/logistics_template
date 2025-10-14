@@ -7,7 +7,7 @@ const pageLanguage = "et"
 
 
 export default function AboutPageEn() {
-    return <About lang={pageLanguage} />
+    return <About />
 }
 
 export const metadata: Metadata = {

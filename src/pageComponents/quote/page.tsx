@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid, Section, Text } from "@radix-ui/themes"
+import { Box, Container, Flex, Grid, Text } from "@radix-ui/themes"
 import { QuoteForm } from "./QuoteForm/QuoteForm"
 import { QuoteDescription } from "./QuoteDescription/QuoteDescription"
 import { InViewWrapper } from "@/hooks/InViewWrapper"
@@ -18,13 +18,13 @@ export const QuotePage = () => {
         <Box>
             <Grid columns={{ initial: "1", lg: "2" }} gap={{ initial: "0", lg: "9" }}>
 
-                <Box size={{ initial: "1", lg: "4" }}>
+                <Box>
                     <InViewWrapper direction="left" delay={0.15}>
                         <QuoteDescription />
                     </InViewWrapper>
                 </Box>
 
-                <Box size={{ initial: "1", lg: "4" }}>
+                <Box>
                     <InViewWrapper direction="right" delay={0.15}>
                         <QuoteForm />
                     </InViewWrapper>
