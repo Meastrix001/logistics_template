@@ -9,7 +9,6 @@ import { brand } from "@/theme/brand.config";
 import { BuildSiteMap } from "@/utils/sitemap/sitemap.builder";
 import { SiteHead } from "@/providers/headLinks";
 import { theme } from "@/constants/theme"
-import { InViewWrapper } from "@/hooks/InViewWrapper";
 
 BuildSiteMap()
 export default function RootLayout({
@@ -34,9 +33,8 @@ export default function RootLayout({
                   <Analytics />
                 </Box>
 
-                <InViewWrapper direction="bottom">
-                  <Footer />
-                </InViewWrapper>
+
+                <Footer />
               </Flex>
             </Box>
           </Theme>

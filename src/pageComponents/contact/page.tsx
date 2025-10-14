@@ -18,7 +18,7 @@ export default function ContactPage() {
 
 
   return (
-    <Container py={"9"} className="nav-correct" px={{ initial: "4", lg: "0" }}>
+    <Container className="nav-correct" px={{ initial: "6", lg: "0" }}>
       <InViewWrapper direction="top">
         <Flex gap={"4"} direction={"column"} mb={"6"}>
           <PageHeader text="Contact us" size="l" />

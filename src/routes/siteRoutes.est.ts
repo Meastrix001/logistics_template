@@ -31,6 +31,16 @@ export const pageRoutes = (lang: "en" | "et") => {
       about: {
         path: `/${lang}/about`,
         label: "nav.keys.about",
+        subLinks: [
+          {
+            path: `/${lang}/about`,
+            label: "nav.keys.about-company",
+          },
+          {
+            path: `/${lang}/about/team`,
+            label: "nav.keys.about-team",
+          }
+        ] as Route[]
       } as Route,
       contact: {
         path: `/${lang}/contact`,

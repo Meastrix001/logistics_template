@@ -3,6 +3,8 @@ export const i18n_en = {
     keys: {
       home: "Home",
       about: "About",
+      "about-company": "About the company",
+      "about-team": "About the team",
       offer: "Quote",
       contact: "Contact",
       terms: "Terms",

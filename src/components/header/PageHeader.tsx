@@ -22,7 +22,7 @@ export const PageHeader = ({ size, text }: { size: "s" | "m" | "l", text: string
 
     if (size === "l") {
         return <Box width={"fit-content"}>
-            <Heading className="txt-italic" as="h1" size={"9"} mb={"2"}>
+            <Heading className="txt-italic" as="h1" size={{ initial: "8", lg: "9" }} mb={"2"}>
                 {text}
             </Heading>
             <Separator size={"4"} color="green" style={{ height: "4px" }} />

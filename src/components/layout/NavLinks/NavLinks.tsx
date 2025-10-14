@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Text } from "@radix-ui/themes";
+import { DropdownMenu, Flex, HoverCard, Text } from "@radix-ui/themes";
 import { Route } from "@/models/Routes";
 import { NavLinksProps } from "./NavLinks.types";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import { pageRoutes } from "@/routes/siteRoutes.est";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { getNestedValue } from "@/utils/getNestedValues";
 import { useLanguageStore } from "@/store/appStore";
+import { NavLinksSubItem } from "./NavLinks.subItem";
 
 
 const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
@@ -25,33 +26,39 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
 
   return (
     <>
-      {Object.values(activeSiteRoutes.nav).map((route: Route, index) => {
-        return (
-          <Link
-            key={index}
-            href={route.path}
-            title={route.label}
-            onClick={onClick}
+      {Object.values(activeSiteRoutes.nav).map((route: Route & {
+        subLinks: Route[]
+      }, index) => {
 
+        if (route.subLinks) {
+          return <NavLinksSubItem key="" route={route} index={index} onClick={onClick} />
+        }
+
+
+        return <Link
+          key={index}
+          href={route.path}
+          title={route.label}
+          onClick={onClick}
+
+        >
+          <Text
+            as="p"
+            style={{
+              color: "black",
+              borderBottom:
+                pathname?.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "") ===
+                  route.path.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "")
+                  ? "2px solid var(--accent-a9)"
+                  : "",
+            }}
+            size="5"
           >
-            <Text
-              as="p"
-              style={{
-                color: "black",
-                borderBottom:
-                  pathname?.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "") ===
-                    route.path.replaceAll("/", "").replaceAll("/et/", "").replaceAll("/en/", "")
-                    ? "2px solid var(--accent-a9)"
-                    : "",
-              }}
-              size="5"
-            >
 
-              {getNestedValue(LanguageKeys[language], route.label) || ""}
+            {getNestedValue(LanguageKeys[language], route.label) || ""}
 
-            </Text>
-          </Link>
-        );
+          </Text>
+        </Link>
       })}
     </>
   );

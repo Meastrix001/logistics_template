@@ -1,61 +1,41 @@
-import {
-  Box,
-  Flex,
-  Card,
-  Separator,
-  Container,
-} from "@radix-ui/themes";
-import Image from "next/image";
-import { AboutHero } from "./about.hero";
-import { AboutBio } from "./about.bio";
-import { AboutDetails } from "./about.details";
-import { brand } from "@/theme/brand.config";
-import { PageLang } from "@/models/pageLang.model";
+import { PageHeader } from "@/components/header/PageHeader";
+import { Box, Card, Container, Flex, Grid, Text } from "@radix-ui/themes";
+import { AboutLegend } from "./AboutLegend/AboutLegend";
+import { AboutHistory } from "./AboutHistory/AboutHistory";
+import { InViewWrapper } from "@/hooks/InViewWrapper";
 
-export default function About({ lang }: PageLang) {
+export default function About() {
   return (
-    <Box className="about" width="100%" position={"relative"} minHeight={"90vh"}>
-      <Container>
-        <Flex
-          direction="column"
-          align="center"
-          gap="6"
-          className="about__container"
-        >
-          <AboutHero lang={lang} />
+    <Container className="nav-correct" px={{ initial: "6", lg: "0" }}>
 
-          <Separator style={{ background: brand.company.colorPrimary, height: "2px" }} size="4" />
 
-          <Flex
-            direction={{ initial: "column", md: "row" }}
-            gap="6"
-            align="start"
-          >
-            <Card className="about__card" size="3">
-              <Box className="about__image">
-                <Box className="image">
-                  <Box className="image__content">
-                    <Image
-                      width="1000"
-                      height="1000"
-                      alt="image me"
-                      src="/static/about/img_me.jpg"
-                    />
-                  </Box>
-                </Box>
-              </Box>
-
-              <AboutBio lang={lang} />
-            </Card>
-
-            <Flex direction="column" gap="4" className="about__details">
-              <AboutDetails lang={lang} />
-            </Flex>
-          </Flex>
+      <InViewWrapper direction="top">
+        <Flex gap={"4"} direction={"column"} mb={"6"}>
+          <PageHeader text="About company" size="l" />
+          <Text>learn about us and our history, and the road we took to get here.</Text>
         </Flex>
-      </Container>
-    </Box>
+      </InViewWrapper>
+
+      <Box mb={{ initial: "2", md: "9" }}>
+        <Grid columns={{ initial: "1", lg: "2" }} gap={"4"}>
+          <InViewWrapper direction="left">
+            <Card>
+              <Box p={"4"}>
+                <AboutHistory />
+              </Box>
+            </Card>
+          </InViewWrapper>
+
+          <InViewWrapper direction="right">
+            <Card>
+              <Box p={"4"}>
+                <AboutLegend />
+              </Box>
+            </Card>
+          </InViewWrapper>
+        </Grid>
+
+      </Box>
+    </Container>
   );
 }
-
-

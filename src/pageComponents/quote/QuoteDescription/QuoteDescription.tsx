@@ -1,11 +1,9 @@
-import { PageHeader } from "@/components/header/PageHeader"
 import { Card, Box, Flex, Text } from "@radix-ui/themes"
 
 export const QuoteDescription = () => {
     return <Card className="shadow-top-left">
         <Box p={"4"}>
             <Flex direction={"column"} gap={"4"}>
-                <PageHeader text="Request a offer" size="m" />
                 <Text> Fill in the form with your details, and we will send you a competitive offer based on the given information</Text>
 
                 <Box>
