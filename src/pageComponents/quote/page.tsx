@@ -16,7 +16,7 @@ export const QuotePage = () => {
         </InViewWrapper>
 
         <Box>
-            <Grid columns={{ initial: "1", lg: "2" }} gap={{ initial: "0", lg: "9" }}>
+            <Grid columns={{ initial: "1", lg: "2" }} gap={{ initial: "7", lg: "9" }}>
 
                 <Box>
                     <InViewWrapper direction="left" delay={0.15}>

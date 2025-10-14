@@ -8,10 +8,11 @@ export const TeamItem = ({ keyData, idx }: { keyData: ContactItem[], idx: number
         {keyData.map((data, i) => {
             return <InViewWrapper key={data.name} direction="top" delay={(0.1 * idx) + (i / 10)}>
                 <Card >
-                    <Grid columns={"4fr 8fr"} gap={"5"}>
-                        <Box>
-                            <AspectRatio ratio={10 / 10}> <img style={{ borderRadius: "10px" }} height={"100%"} width={"100%"} src={data.image} alt="" /></AspectRatio>
+                    <Grid columns={{ initial: "1", lg: "4fr 8fr" }} gap={"5"}>
+                        <Box height={{ initial: "50%", lg: "100%" }}>
+                            <AspectRatio ratio={1 / 1}> <img style={{ borderRadius: "10px" }} height={"100%"} width={"100%"} src={data.image} alt="" /></AspectRatio>
                         </Box>
+
                         <Flex gap={"3"} direction={"column"}>
                             <Box>
                                 <Text as="p" weight={"bold"}>{data.name}</Text>

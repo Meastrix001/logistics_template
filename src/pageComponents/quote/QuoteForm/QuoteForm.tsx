@@ -163,7 +163,7 @@ export const QuoteForm = () => {
                                     >
                                         <Text align={"center"}>
                                             {option.slice(0, 1).toUpperCase()}
-                                            {option.slice(1, option.length)} transport
+                                            {option.slice(1, option.length)}
                                         </Text>
                                     </Badge>
                                 );

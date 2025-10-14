@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
   return (
     <>
       {isMobile && (
-        <>
+        <Box className="navigation_mobile">
           <Flex justify="between" align="center">
             <Button variant="soft" onClick={toggleNav}>
               <HamburgerMenuIcon />
@@ -27,7 +27,11 @@ const Nav: React.FC = () => {
           {isOpen && (
             <Box
               position="fixed"
+              top={"0"}
+              left={"0"}
+              width={"100%"}
               inset="0"
+              style={{ backgroundColor: "white" }}
             >
               <Flex direction="column" p="4" gap="5" height="100%">
                 <Flex justify="end">
@@ -59,7 +63,7 @@ const Nav: React.FC = () => {
               </Flex>
             </Box>
           )}
-        </>
+        </Box>
       )}
 
       {!isMobile && (

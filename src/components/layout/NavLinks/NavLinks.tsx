@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Text } from "@radix-ui/themes";
+import { Text } from "@radix-ui/themes";
 import { NavLinksProps } from "./NavLinks.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,7 +24,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
 
 
   return (
-    <Box>
+    <>
       {Object.values(activeSiteRoutes.nav).map((route, index) => {
 
         if (route.subLinks) {
@@ -57,7 +57,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
           </Text>
         </Link>
       })}
-    </Box>
+    </>
   );
 };
 
