@@ -35,9 +35,11 @@ const Navbar: React.FC = () => {
           </Flex>
 
           <Box display={{ initial: "none", lg: "block" }}>
-            <Button size={"3"} className="cursor" variant="outline">
-              Contact us
-            </Button>
+            <Link href={`/${language}/contact`} >
+              <Button size={"3"} className="cursor" variant="outline">
+                Contact us
+              </Button>
+            </Link>
 
           </Box>
         </Grid>

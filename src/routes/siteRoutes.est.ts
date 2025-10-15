@@ -22,6 +22,10 @@ export const pageRoutes = (lang: "en" | "et") => {
       path: `/${lang}/quote`,
       label: "",
     } as Route,
+    jobs: {
+      path: `/${lang}/jobs/:slug`,
+      label: "",
+    },
     // Nav
     nav: {
       home: {

@@ -1,4 +1,4 @@
-import ReviewPage from "@/pageComponents/review/page";
+import { QuotePage } from "@/pageComponents/quote/page";
 import { brand } from "@/theme/brand.config";
 import { LanguageKeys } from "@/utils/i18n/LanguageKeys";
 import { Metadata } from "next";
@@ -6,16 +6,16 @@ import { Metadata } from "next";
 const pageLanguage = "et"
 
 
-export default function ReviewPageEn() {
-    return <ReviewPage lang={pageLanguage} />
+export default function QuotePageEt() {
+    return <QuotePage />
 }
 
 export const metadata: Metadata = {
     alternates: {
-        canonical: `${brand.company.site}${pageLanguage}/review`,
+        canonical: `${brand.company.site}${pageLanguage}/quote`,
         languages: {
-            en: `${brand.company.site}en/review`,
-            et: `${brand.company.site}et/review`,
+            en: `${brand.company.site}en/quote`,
+            et: `${brand.company.site}et/quote`,
         },
     },
     title: LanguageKeys[pageLanguage].SEO.review.title,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: LanguageKeys[pageLanguage].SEO.review.title,
         description: LanguageKeys[pageLanguage].SEO.review.desc,
-        url: `${brand.company.site}${pageLanguage}/review`,
+        url: `${brand.company.site}${pageLanguage}/quote`,
         siteName: brand.company.name,
         images: [
             {

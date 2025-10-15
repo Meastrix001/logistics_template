@@ -14,8 +14,8 @@ export const LandingSalesPoints = () => {
             {mockData.map((item, i) => {
 
                 return (
-                    <InViewWrapper key={`l-sp-${i}`} direction="bottom" delay={(i + 1) / 7}>
-                        <Card variant="surface" >
+                    <InViewWrapper className="home-page__sp" key={`l-sp-${i}`} direction="bottom" delay={(i + 1) / 7}>
+                        <Card variant="surface"  >
                             <Flex
                                 direction="column"
                                 align={"center"}

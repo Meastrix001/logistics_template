@@ -2,10 +2,13 @@ export const i18n_est = {
   nav: {
     keys: {
       home: "Avaleht",
-      ss: "Teenused ja hinnad",
       about: "Minust",
+      "about-company": "About the company",
+      "about-team": "About the team",
       contact: "Kontakt",
-      faq: "KKK",
+      offer: "Quote",
+      terms: "Terms",
+
     },
   },
 

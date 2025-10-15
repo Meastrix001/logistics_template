@@ -1,6 +1,7 @@
 "use client"
 
 import { InViewWrapper } from "@/hooks/InViewWrapper"
+import { useLanguageStore } from "@/store/appStore"
 import { Flex, Button } from "@radix-ui/themes"
 import Link from "next/link"
 
@@ -8,7 +9,7 @@ import Link from "next/link"
 const CTAS = [
     {
         text: "Request a Quote",
-        link: "",
+        link: "quote",
         variant: "solid",
         color: "green",
         Direction: "left"
@@ -22,7 +23,7 @@ const CTAS = [
     },
     {
         text: "Career openings",
-        link: "",
+        link: "jobs",
         variant: "soft",
         color: "green",
         Direction: "right"
@@ -30,12 +31,12 @@ const CTAS = [
 ]
 
 export const LandingCTA = () => {
-
+    const { language } = useLanguageStore()
     return <Flex gap="5" align={"center"} justify={"center"} direction={{ initial: "column", md: "row" }} >
 
         {CTAS.map((cta, i) => {
             return <InViewWrapper key={""} delay={(0.1 + i) / 10} direction={cta.Direction as "top"}>
-                <Link href={cta.link} passHref >
+                <Link href={`/${language}/${cta.link}`} passHref >
                     <Button size={"4"} variant={cta.variant as "solid"} color={cta.color as "green"} className="cursor" >
                         {cta.text}
                     </Button>

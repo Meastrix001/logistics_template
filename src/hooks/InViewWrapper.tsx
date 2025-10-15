@@ -11,6 +11,7 @@ interface InViewWrapperProps {
     duration?: number;
     direction?: Direction;
     distance?: number;
+    className?: string
 }
 
 export const InViewWrapper = ({
@@ -19,6 +20,7 @@ export const InViewWrapper = ({
     duration = 0.6,
     direction = "bottom",
     distance = 40,
+    className
 }: InViewWrapperProps) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: "-50px" });
@@ -53,6 +55,7 @@ export const InViewWrapper = ({
             variants={{
                 visible: { opacity: 1, x: 0, y: 0 },
             }}
+            className={className}
         >
             {children}
         </motion.div>

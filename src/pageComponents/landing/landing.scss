@@ -34,7 +34,33 @@
       position: absolute;
       inset: 0; // shorthand for top/right/bottom/left = 0
       z-index: -1;
-      filter: blur(4px);
+      filter: blur(10px);
     }
+  }
+  &__sp {
+    transition: 0.1s ease;
+
+    &:hover {
+      transition: 0.1s ease;
+      transform: scale(1.05);
+    }
+
+    &:nth-child(3) {
+      .rt-Card {
+        animation: infinite Pulse 2.5s;
+      }
+    }
+  }
+}
+
+@keyframes Pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
